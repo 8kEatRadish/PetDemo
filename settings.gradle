@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PetDemo"
 include ':app'
+include ':PetView'
+include ':pet'

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Binder
 import android.os.IBinder
 import android.text.TextUtils
+import com.google.gson.Gson
 import java.io.*
 import java.net.ServerSocket
 import java.net.Socket
@@ -25,6 +26,7 @@ class SocketServer : Service() {
 
     companion object {
         var callBack: ((String) -> Unit)? = null
+        var commandCallBack: ((CommandBody) -> Unit)? = null
     }
 
     override fun onCreate() {
@@ -53,7 +55,9 @@ class SocketServer : Service() {
                     callBack?.invoke("收到客户端的信息为空，断开连接")
                     break
                 }
-                callBack?.invoke("Client Msg： ${msg.split(";")[0]}")
+                callBack?.invoke("Client Msg： $msg")
+
+                commandCallBack?.invoke(Gson().fromJson(msg, CommandBody::class.java))
 //                val msgOp = "加工从客户端的信息： $msg"
 //                out.println(msgOp);
             }

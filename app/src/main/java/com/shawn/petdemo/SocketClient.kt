@@ -61,7 +61,7 @@ object SocketClient {
                 PrintWriter(BufferedWriter(OutputStreamWriter(socket!!.getOutputStream())),
                     true)
             println("suihw 客户端发送出消息 $data")
-            writer.println("$data;${System.currentTimeMillis()}")
+            writer.println("$data")
         } catch (e: IOException) {
             e.printStackTrace()
         }

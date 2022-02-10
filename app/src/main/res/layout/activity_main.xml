@@ -7,9 +7,10 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/host"
+        app:layout_constraintBottom_toTopOf="@+id/my_host"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,10 +23,10 @@
     </ScrollView>
 
     <EditText
-        android:id="@+id/host"
-        android:hint="host"
+        android:id="@+id/my_host"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="host"
         app:layout_constraintBottom_toTopOf="@+id/connect" />
 
     <Button
@@ -37,20 +38,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/data"
-        android:layout_width="match_parent"
-        android:hint="信息"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/send"
-        android:text="发送"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="发送"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/start_server"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -60,8 +53,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="连接服务"
-        app:layout_constraintBottom_toTopOf="@+id/data"
+        app:layout_constraintBottom_toTopOf="@+id/send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <View
+        android:id="@+id/pet"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
